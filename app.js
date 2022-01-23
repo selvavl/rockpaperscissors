@@ -1,4 +1,9 @@
-console.log("Welcome to Rock, Paper, Scissors");
+window.alert("Welcome to Rock, Paper, Scissors // Best to 5");
+
+let winCount = 0;
+let loseCount = 0;
+
+game();
 
 function computerPlay() {
 
@@ -20,47 +25,64 @@ function computerPlay() {
     return computerValue;
 }
 
+function playRound() {
 
-function playRound(playerSelection) {
+    let playerSelection = prompt("Choose your weapon");
 
     let computerSelection = computerPlay();
     let message = "";
+    function result() {
+        alert(message);
+    }
 
     if(playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
         message = "It's a tie!";
-        return message;
+        return result();
 
   } else if(playerSelection.toLowerCase() == "rock") { // PLAYER CHOOSES ROCK
       if(computerSelection.toLowerCase() == "scissors") {
           message = "Rock beats Scissors, You win!"
-          return message;
+          winCount += 1;
+          return result();
       } else if (computerSelection.toLowerCase() == "paper") {
           message = "Paper beats Rock, You Lose!"
-          return message;
+          loseCount +=1;
+          return result();
       }
   } else if(playerSelection.toLowerCase() == "paper") { // PLAYER CHOOSES PAPER
       if(computerSelection.toLowerCase() == "rock") {
           message = "Paper beats Rock, You win!"
-          return message;
+          winCount += 1;
+          return result();
       } else if (computerSelection.toLowerCase() == "scissors") {
           message = "Scissors beats Paper, You Lose!"
-          return message;
+          loseCount +=1;
+          return result();
       }
   } else if(playerSelection.toLowerCase() == "scissors") { // PLAYER CHOOSES SCISSORS
     if(computerSelection.toLowerCase() == "paper") {
         message = "Scissors beats Paper, You win!"
-        return message;
+        winCount += 1;
+        return result();
     } else if (computerSelection.toLowerCase() == "rock") {
         message = "Rock beats Scissors, You Lose!"
-        return message;
+        loseCount +=1;
+        return result();
     }
   } else {
-      message = "Invalid value, try again"
-      return message;
+      alert("Invalid value, try again");
+      playRound();
   }
 }
 
-  
-/*  const playerSelection = "rock";
-  const computerSelection = computerPlay();
-  console.log(playRound(playerSelection, computerSelection));*/
+function game() {
+    playRound();
+    if(winCount == 5) {
+        alert("You won");
+    } else if(loseCount == 5) {
+        alert("You Lost")
+    } else {
+        game();
+    }
+
+}
