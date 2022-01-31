@@ -1,3 +1,48 @@
 * {
     border: solid 1px red;
 }
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+h3 {
+    text-align: center;
+}
+
+.container-box {
+    display: flex;
+    justify-content: center;
+}
+
+.second-level-box {
+    margin: 0;
+}
+main {
+    display: flex;
+}
+
+.role-img {
+    width: 6em;
+    height: 6em;
+}
+
+button {
+    cursor: pointer;
+}
+
+#result-text {
+    width: 25em;
+    height: 3em;
+}
+
+#game-container-box {
+    display: flex;
+    align-items: center;
+}
