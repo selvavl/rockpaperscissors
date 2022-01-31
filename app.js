@@ -48,15 +48,15 @@ function computerPlay() {
     switch (selectorValue) {
         case 0:
             computerValue = "vax";
-            cpuChoose.src="rockpaperscissors/img/vax.svg"
+            cpuChoose.src="img/vax.svg"
             break;
         case 1:
             computerValue = "avx";
-            cpuChoose.src="rockpaperscissors/img/avx.png"
+            cpuChoose.src="img/avx.png"
             break;
         case 2:
             computerValue = "vir";
-            cpuChoose.src="rockpaperscissors/img/vir.svg"
+            cpuChoose.src="img/vir.svg"
             break;
     }
 
@@ -86,9 +86,9 @@ function playRound(playerSelection) {
     let computerSelection = computerPlay();
 
     if(playerSelection == "vax" || playerSelection == "vir"){
-        humanChoose.src=`rockpaperscissors/img/${playerSelection}.svg`;} 
+        humanChoose.src=`img/${playerSelection}.svg`;} 
         else {
-            humanChoose.src=`rockpaperscissors/img/${playerSelection}.png`
+            humanChoose.src=`img/${playerSelection}.png`
         }
         
     function result() {
